@@ -1,0 +1,14 @@
+<html>
+    <body>
+
+    <div>Thanks for using one-trick.gg</div>
+    <div class="topnav">
+        <input type="text" placeholder="Search..">
+    </div>
+
+    <% for (var i = 1; i < data.entries.length;  i++ ) { %>
+    <br/>  <%="Rank " + i + ": " + data.entries[i].summonerName +  " " + data.entries[i].leaguePoints + " LP"%> 
+    <% } %>
+
+    </body>
+</html>

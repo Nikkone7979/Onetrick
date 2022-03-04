@@ -1,0 +1,28 @@
+<html>
+    
+    <div style="padding: 20px">
+    <img src="https://ddragon.leagueoflegends.com/cdn/11.14.1/img/profileicon/<%=data.profileIconId%>.png" style="width:100px">
+    <br>
+    <%=" " + data.name%> 
+    <br>
+    <%="Level " + data.summonerLevel%>
+    <br>
+    <%let FlexQueue = (rankData.find( ({ queueType }) => queueType === 'RANKED_FLEX_SR'))%>
+    <%if (rankData.includes(FlexQueue)){ %>
+        <%="Flex Rank: " + FlexQueue.tier + " " + FlexQueue.rank + ", " + FlexQueue.leaguePoints + " LP"%>
+        <img src="/<%=FlexQueue.tier%>.png" style="width:50px" />
+            <% } 
+        else { %>
+            <%="Flex Rank: Unranked" %>
+            <% } %>
+    <br>
+    <%let SoloQueue = (rankData.find( ({ queueType }) => queueType === 'RANKED_SOLO_5x5'))%>
+    <%if (rankData.includes(SoloQueue)){ %>
+        <%="Solo Queue Rank: " + SoloQueue.tier + " " + SoloQueue.rank + ", " + SoloQueue.leaguePoints + " LP"%>
+        <img src="/<%=SoloQueue.tier%>.png" style="width:50px" />
+            <% } 
+        else { %>
+        <%="Solo Queue Rank: Unranked" %>
+            <% } %>
+    </div>
+</html>
